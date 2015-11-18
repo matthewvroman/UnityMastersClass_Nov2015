@@ -21,14 +21,14 @@ public class AttributesExample : MonoBehaviour {
 	}
 
 	[SerializeField] private string m_string;
-
+	
 	[SerializeField] private string m_defaultString = "default";
 
 	[SerializeField] private float m_normalFloat;
 
 	[SerializeField] [Range(0.0f, 100.0f)] private float m_rangedFloat;
 
-	[SerializeField] [Range(0, 100)] private int m_rangedInt;
+	[Tooltip("This slider can't go past 100!")] [SerializeField] [Range(0, 100)] private int m_rangedInt;
 
 	[SerializeField] private SerializedEnum m_serializedEnum;
 
@@ -45,7 +45,7 @@ public class AttributesExample : MonoBehaviour {
 	[ContextMenu("RenameGameObject")]
 	private void RenameGameObject()
 	{
-		this.gameObject.name = m_string;
+		this.gameObject.name = m_defaultString;
 	}
 
 }

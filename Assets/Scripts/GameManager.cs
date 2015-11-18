@@ -46,12 +46,19 @@ public class GameManager {
 		if (serializedData != string.Empty) 
 		{
 			Hashtable hashtable = (Hashtable)Json.Deserialize(SAVE_DATA_KEY);
+
+			if(hashtable.ContainsKey(AudioManager.HashTableKey))
+			{
+				AudioManager.Instance.ReadFromHashTable((Hashtable)hashtable[AudioManager.HashTableKey]);
+			}
 		}
 	}
 
 	public void SaveData()
 	{
 		Hashtable hashtable = new Hashtable();
+
+		hashtable [AudioManager.HashTableKey] = AudioManager.Instance.WriteToHashTable ();
 
 		PlayerPrefs.SetString (SAVE_DATA_KEY, Json.Serialize(hashtable));
 		PlayerPrefs.Save();

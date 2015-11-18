@@ -7,8 +7,6 @@ public class NavmeshExample : MonoBehaviour {
 	[SerializeField] private GameObject m_player;
 	[SerializeField] private float m_playerSpeed;
 
-	private CharacterController m_characterController;
-
 	private Vector3 m_desiredPosition;
 
 	private NavMeshAgent m_navMeshAgent;
@@ -20,7 +18,6 @@ public class NavmeshExample : MonoBehaviour {
 
 	private void Start()
 	{
-		m_characterController = m_player.GetComponent<CharacterController> ();
 		m_navMeshAgent = m_player.AddComponent<NavMeshAgent> ();
 	}
 
