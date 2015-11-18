@@ -10,8 +10,6 @@ Includes:
 * Preprocessor Examples
 * Extensions Examples
 * Re-usable Component Examples
-
-Soon to Include:
-* Audio Manager
 * Scaleable UI Example
 * Navmesh Example
+
